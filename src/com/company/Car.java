@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,8 +11,8 @@ public abstract class Car implements Movable {
     private int serialNumber;
     private String colour;
     private Calendar calendar;
-    private Mark mark; // enum
-    private Boolean go; //?????
+    private Mark mark;
+    private Boolean go;
 
     public Car(String name, int serialNumber, String colour, Calendar calendar, Mark mark, Boolean go) {
         this.name = name;
@@ -33,10 +31,21 @@ public abstract class Car implements Movable {
 
     public abstract void stop();
 
+    public String convertToString() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MM:yyyy");
+        return simpleDateFormat.format(calendar.getTime());
+    }
+
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("Car brand - ").append(mark).append(", colour - ").append(colour);
+        str.append("Car brand - ").append(mark)
+                .append("\n colour - ").append(colour)
+                .append("\n SerialNumber - ").append(serialNumber)
+                .append("\n Calendar - ").append(convertToString())
+                .append("\n Mark - ").append(mark)
+                .append("\n State - ").append(go+" , ");
         return str.toString();
     }
 
@@ -88,16 +97,13 @@ public abstract class Car implements Movable {
     }
 
 
-    public String getCalendar() {
-        Date date = calendar.getTime();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        return dateFormat.format(date);
+    public Date getCalendar() {
+        return calendar.getTime();
     }
 
     public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
-
 
     public Mark getMark() {
         return mark;
@@ -108,8 +114,13 @@ public abstract class Car implements Movable {
     }
 
 
-    public Boolean getIsGo() {
-        return go;
+    public  String getIsGo() {
+        if(go) {
+            return  "я еду!!!!";
+        }
+        else {
+            return "я не еду(((((";
+        }
     }
 
     public void setIsGo(Boolean isGo) {

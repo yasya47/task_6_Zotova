@@ -1,8 +1,8 @@
-package com.company;
+package com.company.Movable;
 
 public enum Mark {
     MERSEDES("Mercedes-Benz", "Germany", 1883),
-    BMB("Bayerische Motoren Werke AG", "Germany", 1916),
+    BMW("Bayerische Motoren Werke AG", "Germany", 1916),
     MAZDA("Mazda Motor Corporation", "Japan", 1920),
     TESLA("Tesla Motors", "USA", 2003),
     LADA("AvtoVAZ", "Russia", 1970);

@@ -8,14 +8,14 @@ public class Bike implements Movable {
     private int numberSpeeds;
     private int price;
 
-    public Bike(String mark, int numberSpeeds,int price) {
+    public Bike(String mark, int numberSpeeds, int price) {
         this.mark = mark;
         this.numberSpeeds = numberSpeeds;
         this.price = price;
     }
 
-    public void fast (int numberSpeeds){
-        if (numberSpeeds>3)
+    public void fast(int numberSpeeds) {
+        if (numberSpeeds > 3)
             System.out.println("This bike is fast");
         else
             System.out.println("This bike is slow");
@@ -26,7 +26,7 @@ public class Bike implements Movable {
         StringBuilder str = new StringBuilder();
         str.append("Brand of this bike ").append(mark)
                 .append("\nThis bike has  ").append(numberSpeeds).append(" speeds ")
-        .append("\nPrise ").append(price).append("$");
+                .append("\nPrise ").append(price).append("$");
         return str.toString();
     }
 
@@ -60,22 +60,27 @@ public class Bike implements Movable {
     public void setNumberSpeeds(int numberSpeeds) {
         this.numberSpeeds = numberSpeeds;
     }
+
     public int getPrice() {
-        return price ;
+        return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
-    class Lamp{
+
+    class Lamp {
         private boolean isLamp;
-        Lamp (boolean isLamp){
+
+        Lamp(boolean isLamp) {
             this.isLamp = isLamp;
         }
-        public boolean getIsLamp(){
+
+        public boolean getIsLamp() {
             return isLamp;
         }
-        public void setIsLamp(boolean isLamp){
+
+        public void setIsLamp(boolean isLamp) {
             this.isLamp = isLamp;
         }
     }
